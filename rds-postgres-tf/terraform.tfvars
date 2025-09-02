@@ -1,0 +1,9 @@
+aws_region    = "us-west-2"  # Change to your preferred region
+environment   = "dev"
+assume_role_arn = ""  # Add your role ARN if using assume role
+db_identifier = "my-postgres-db"
+db_name       = "myappdb"
+db_username   = "dbadmin"
+instance_class = "db.t3.medium"
+allocated_storage = 50
+multi_az = false
