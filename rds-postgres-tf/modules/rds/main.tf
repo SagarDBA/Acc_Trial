@@ -3,13 +3,9 @@ resource "aws_db_parameter_group" "postgresql" {
   name   = "${var.identifier}-parameter-group"
 
   parameter {
-    name  = "max_connections"
-    value = "100"
-  }
-
-  parameter {
-    name  = "shared_buffers"
-    value = "{DBInstanceClassMemory/4096}"
+    name         = "max_connections"
+    value        = "100"
+    apply_method = "pending-reboot"  # Changed from "immediate" to "pending-reboot"
   }
 
   tags = var.tags
